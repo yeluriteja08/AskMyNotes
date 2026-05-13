@@ -1,0 +1,607 @@
+/* =========================================================
+   AskMyNotes — Professional UI Theme
+========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+
+  --bg-primary: #f4f7fb;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.82);
+
+  --text-primary: #111827;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  --border-color: #dbe2ea;
+
+  --accent-primary: #4f46e5;
+  --accent-secondary: #7c3aed;
+
+  --success-bg: #dcfce7;
+  --success-text: #15803d;
+
+  --info-bg: #dbeafe;
+  --info-text: #1d4ed8;
+
+  --shadow-soft:
+    0 8px 30px rgba(15, 23, 42, 0.08);
+
+  --shadow-hover:
+    0 12px 40px rgba(15, 23, 42, 0.12);
+
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+
+  --transition:
+    all 0.25s ease;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+
+  --bg-primary: #0f172a;
+  --bg-secondary: #111827;
+  --bg-card: rgba(17, 24, 39, 0.82);
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+
+  --border-color: #334155;
+
+  --accent-primary: #818cf8;
+  --accent-secondary: #a855f7;
+
+  --success-bg: rgba(34, 197, 94, 0.15);
+  --success-text: #4ade80;
+
+  --info-bg: rgba(59, 130, 246, 0.15);
+  --info-text: #60a5fa;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  font-family: var(--font-body);
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(99, 102, 241, 0.08),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(168, 85, 247, 0.08),
+      transparent 25%
+    ),
+    var(--bg-primary);
+
+  color: var(--text-primary);
+
+  transition: var(--transition);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  background: black;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  padding:
+    32px 24px;
+
+  text-align: center;
+
+  box-shadow: var(--shadow-soft);
+}
+
+header h1 {
+
+  margin: 0;
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  font-weight: 700;
+
+  letter-spacing: -2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #c7d2fe,
+      #e9d5ff
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+
+  margin-top: 14px;
+
+  font-size: 1.05rem;
+
+  color: #d1d5db;
+
+  max-width: 700px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+
+  max-width: 950px;
+
+  margin:
+    60px auto;
+
+  padding:
+    0 24px;
+}
+
+/* =========================
+   SECTIONS / CARDS
+========================= */
+
+section {
+
+  background: var(--bg-card);
+
+  backdrop-filter: blur(14px);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: var(--radius-lg);
+
+  padding: 32px;
+
+  margin-bottom: 32px;
+
+  box-shadow: var(--shadow-soft);
+
+  transition: var(--transition);
+}
+
+section:hover {
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    var(--shadow-hover);
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,
+h2,
+h3 {
+
+  font-family: var(--font-heading);
+}
+
+h2 {
+
+  position: relative;
+
+  display: inline-block;
+
+  margin-top: 0;
+
+  margin-bottom: 24px;
+
+  font-size: 2rem;
+
+  color: var(--text-primary);
+}
+
+h2::after {
+
+  content: "";
+
+  display: block;
+
+  width: 60%;
+
+  height: 5px;
+
+  margin-top: 8px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to right,
+      var(--accent-primary),
+      var(--accent-secondary)
+    );
+}
+
+/* =========================
+   LABELS
+========================= */
+
+label {
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-weight: 600;
+
+  color: var(--text-secondary);
+
+  font-size: 0.98rem;
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input[type="file"],
+textarea {
+
+  width: 100%;
+
+  padding: 16px;
+
+  border-radius: var(--radius-md);
+
+  border:
+    1px solid var(--border-color);
+
+  background: var(--bg-secondary);
+
+  color: var(--text-primary);
+
+  font-size: 1rem;
+
+  transition: var(--transition);
+}
+
+textarea {
+
+  min-height: 140px;
+
+  resize: vertical;
+
+  line-height: 1.7;
+}
+
+input[type="file"]:focus,
+textarea:focus {
+
+  outline: none;
+
+  border-color:
+    var(--accent-primary);
+
+  box-shadow:
+    0 0 0 5px rgba(99, 102, 241, 0.12);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+
+  margin-top: 18px;
+
+  padding:
+    14px 28px;
+
+  border: none;
+
+  border-radius: var(--radius-md);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent-primary),
+      var(--accent-secondary)
+    );
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  transition: var(--transition);
+
+  box-shadow:
+    0 10px 20px rgba(79, 70, 229, 0.25);
+}
+
+button:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 14px 28px rgba(79, 70, 229, 0.35);
+}
+
+button:active {
+
+  transform:
+    scale(0.98);
+}
+
+/* =========================
+   STATUS TEXT
+========================= */
+
+#upload-status,
+#status {
+
+  margin-top: 14px;
+
+  color: var(--text-muted);
+
+  font-size: 0.95rem;
+}
+
+/* =========================
+   ANSWER PANEL
+========================= */
+
+#answer {
+
+  border-top:
+    5px solid var(--accent-primary);
+}
+
+#answer-text {
+
+  font-size: 1rem;
+
+  line-height: 1.9;
+
+  color: var(--text-secondary);
+
+  white-space: pre-wrap;
+}
+
+/* =========================
+   META PILLS
+========================= */
+
+#qtype-pill,
+#tool-pill {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    8px 16px;
+
+  margin-right: 10px;
+
+  margin-bottom: 18px;
+
+  border-radius: 999px;
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+}
+
+#qtype-pill {
+
+  background: var(--info-bg);
+
+  color: var(--info-text);
+}
+
+#tool-pill {
+
+  background: var(--success-bg);
+
+  color: var(--success-text);
+}
+
+/* =========================
+   SOURCES
+========================= */
+
+details {
+
+  margin-top: 30px;
+
+  border:
+    1px solid var(--border-color);
+
+  border-radius: var(--radius-md);
+
+  padding: 16px;
+
+  background:
+    rgba(148, 163, 184, 0.05);
+}
+
+summary {
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  color: var(--text-primary);
+}
+
+#sources-list {
+
+  margin-top: 14px;
+
+  padding-left: 24px;
+
+  line-height: 1.8;
+
+  color: var(--text-secondary);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+  text-align: center;
+
+  padding:
+    30px 20px;
+
+  color: var(--text-muted);
+
+  font-size: 0.95rem;
+}
+
+/* =========================
+   CODE HIGHLIGHT
+========================= */
+
+code {
+
+  font-family: var(--font-code);
+
+  background:
+    rgba(99, 102, 241, 0.12);
+
+  color:
+    var(--accent-primary);
+
+  padding:
+    3px 8px;
+
+  border-radius: 8px;
+}
+
+/* =========================
+   TEXT SELECTION
+========================= */
+
+::selection {
+
+  background:
+    rgba(99, 102, 241, 0.25);
+
+  color:
+    var(--text-primary);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+
+  background:
+    transparent;
+}
+
+::-webkit-scrollbar-thumb {
+
+  background:
+    linear-gradient(
+      var(--accent-primary),
+      var(--accent-secondary)
+    );
+
+  border-radius: 999px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  main {
+
+    margin:
+      40px auto;
+  }
+
+  section {
+
+    padding: 24px;
+  }
+
+  h2 {
+
+    font-size: 1.6rem;
+  }
+
+  button {
+
+    width: 100%;
+  }
+}
